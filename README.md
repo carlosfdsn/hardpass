@@ -37,19 +37,35 @@ cd hardpass
 go build -o hardpass .
 ```
 
+On Windows, build an `.exe` instead:
+
+```powershell
+go build -o hardpass.exe .
+```
+
+Prebuilt binaries for Windows, Linux and macOS are available on the [Releases](https://github.com/carlosfdsn/hardpass/releases) page.
+
 ## Usage
 
 ```bash
 hardpass <password>
 ```
 
-Example:
+If you built it yourself, run it from the project folder:
 
 ```bash
-hardpass 'MyP@ssw0rd2024'
+# Linux / macOS
+./hardpass 'MyP@ssw0rd2024'
 ```
 
-Wrap the password in single quotes so your shell does not interpret special characters like `!`, `$` or `&`.
+```powershell
+# Windows (PowerShell)
+.\hardpass.exe 'MyP@ssw0rd2024'
+```
+
+If you installed it with `go install`, you can run `hardpass 'MyP@ssw0rd2024'` from any folder.
+
+Wrap the password in single quotes so your shell does not interpret special characters like `!`, `$` or `&`. On Windows CMD, use double quotes instead.
 
 ## How the score works
 
